@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>DTI Ratio Calculator | Debt Breakdown</title>
+<meta name="description" content="Calculate your debt-to-income ratio. See lender ratings and compare to industry standards.">
+<meta property="og:title" content="DTI Ratio Calculator | Debt Breakdown">
+<meta property="og:description" content="Calculate your debt-to-income ratio. See lender ratings and compare to industry standards.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://debtbreakdown.com/tools/debt-to-income-ratio.html">
+<meta property="og:image" content="https://debtbreakdown.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://debtbreakdown.com/tools/debt-to-income-ratio.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://debtbreakdown.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://debtbreakdown.com/tools/index.html"},{"@type":"ListItem","position":3,"name":"DTI Ratio Calculator","item":"https://debtbreakdown.com/tools/debt-to-income-ratio.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DTI Ratio Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://debtbreakdown.com/tools/debt-to-income-ratio.html"}</script>
+</head>
+<body>
+<nav class="ddb-nav"><div class="ddb-container ddb-nav-inner"><a href="../index.html" class="ddb-logo">Debt<span>Breakdown</span></a><button class="ddb-menu-btn" onclick="document.querySelector('.ddb-nav-links').classList.toggle('ddb-mobile-open')" aria-label="Toggle menu">☰</button><ul class="ddb-nav-links"><li><a href="../index.html">Home</a></li><li><a href="./index.html">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<!-- Tool Top Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+</div>
+
+<div class="ddb-container" style="padding:40px 24px;"><nav class="ddb-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span class="ddb-breadcrumb-sep">/</span><a href="./index.html">Tools</a><span class="ddb-breadcrumb-sep">/</span><span>DTI Ratio Calculator</span></nav></div>
+<div class="ddb-tool-layout">
+  <div class="ddb-tool-panel">
+    <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">DTI Ratio Calculator</h2>
+    <div id="tool-inputs"><div class="ddb-form-group"><label>Monthly Rent / Mortgage ($)</label><input type="number" id="rent" step="10"></div>
+<div class="ddb-form-group"><label>Car Payment ($)</label><input type="number" id="car" step="10"></div>
+<div class="ddb-form-group"><label>Student Loan Payment ($)</label><input type="number" id="student" step="10"></div>
+<div class="ddb-form-group"><label>Credit Card Minimums ($)</label><input type="number" id="cc" step="10"></div>
+<div class="ddb-form-group"><label>Other Monthly Debt ($)</label><input type="number" id="other" step="10"></div>
+<div class="ddb-form-group"><label>Gross Monthly Income ($)</label><input type="number" id="income" step="100"></div></div>
+    <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+      <button class="ddb-btn ddb-btn-primary" onclick="calculate()">Calculate</button>
+      <button class="ddb-btn ddb-btn-secondary" onclick="resetForm()">Reset</button>
+      <button class="ddb-btn ddb-btn-outline" onclick="window.print()">Export PDF</button>
+    </div>
+    <p style="color:var(--ddb-text-muted);font-size:0.85rem;margin-top:16px;">All data stays in your browser — we never see it.</p>
+  </div>
+  <div>
+    <div class="ddb-chart-container" style="margin-bottom:24px;"><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Results</h3><div id="results-area"></div></div>
+    <div class="ddb-chart-container"><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Visualization</h3><canvas id="chartCanvas" width="500" height="300" style="width:100%;max-height:300px;"></canvas></div>
+  </div>
+</div>
+<div class="ddb-container" style="padding:40px 24px 80px;"><div style="display:grid;grid-template-columns:2fr 1fr;gap:40px;"><!-- Tool Middle Ad --><div class="ddb-container"><div class="ddb-ad-slot" id="tool_middle" data-ad-slot="tool_middle"></div></div>
+<div><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:20px;">Related Articles</h3><div id="related-articles"></div></div><div><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:20px;">Recommended Tools</h3><div id="recommended-tools"></div></div></div></div>
+<!-- Tool Bottom Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+</div>
+
+<footer class="ddb-footer"><div class="ddb-container"><div class="ddb-footer-grid"><div><h4>Debt Breakdown</h4><p style="font-size:0.9rem;color:#a0a0b0;line-height:1.6;">Tools and stories to help you understand, track, and eliminate your debt.</p></div><div><h4>Tools</h4><a href="./debt-payoff-calculator.html">Debt Payoff Calculator</a><a href="./credit-card-interest-calculator.html">Credit Card Interest</a><a href="./loan-amortization.html">Loan Amortization</a><a href="./debt-to-income-ratio.html">DTI Ratio</a><a href="./balance-transfer-calculator.html">Balance Transfer</a><a href="./extra-payment-analyzer.html">Extra Payment</a><a href="./snowball-vs-avalanche.html">Snowball vs Avalanche</a></div><div><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../faq.html">FAQ</a><a href="../blog/index.html">Blog</a></div><div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a><a href="../disclaimer.html">Disclaimer</a><a href="../disclosure.html">Affiliate Disclosure</a></div></div><div class="ddb-footer-bottom"><p>© 2026 Debt Breakdown. All rights reserved.</p></div></div></footer>
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY='ddb_dti';
+function loadData(){const s=localStorage.getItem(STORAGE_KEY);if(s){const d=JSON.parse(s);['rent','car','student','cc','other','income'].forEach(k=>{const el=document.getElementById(k);if(el)el.value=d[k]||''});}}
+function saveData(){const d={};['rent','car','student','cc','other','income'].forEach(k=>{const el=document.getElementById(k);if(el)d[k]=el.value});localStorage.setItem(STORAGE_KEY,JSON.stringify(d));}
+function calculate(){const rent=parseFloat(document.getElementById('rent').value)||0;const car=parseFloat(document.getElementById('car').value)||0;const student=parseFloat(document.getElementById('student').value)||0;const cc=parseFloat(document.getElementById('cc').value)||0;const other=parseFloat(document.getElementById('other').value)||0;const income=parseFloat(document.getElementById('income').value)||0;saveData();if(income<=0){document.getElementById('results-area').innerHTML='<p style="color:var(--ddb-text-muted);">Enter your income.</p>';return;}const totalDebt=rent+car+student+cc+other;const dti=(totalDebt/income)*100;let rating,color;if(dti<28){rating='Excellent';color='var(--ddb-primary)';}else if(dti<36){rating='Good';color='#4a90d9';}else if(dti<43){rating='Fair';color='#f5a623';}else{rating='High Risk';color='var(--ddb-accent)';}let html=`<div class="ddb-card" style="padding:24px;text-align:center;margin-bottom:16px;"><div style="font-size:3rem;font-weight:800;color:${color};">${dti.toFixed(1)}%</div><div style="font-size:1.2rem;font-weight:600;color:${color};">${rating}</div><div style="font-size:0.9rem;color:var(--ddb-text-muted);margin-top:8px;">Monthly debt: $${totalDebt.toFixed(0)} / Income: $${income.toFixed(0)}</div></div>`;html+=`<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center;"><div class="ddb-card" style="padding:12px;"><div style="font-size:1.2rem;font-weight:700;color:var(--ddb-primary);">28%</div><div style="font-size:0.8rem;color:var(--ddb-text-muted);">Ideal</div></div><div class="ddb-card" style="padding:12px;"><div style="font-size:1.2rem;font-weight:700;color:#f5a623;">36%</div><div style="font-size:0.8rem;color:var(--ddb-text-muted);">Warning</div></div><div class="ddb-card" style="padding:12px;"><div style="font-size:1.2rem;font-weight:700;color:var(--ddb-accent);">43%</div><div style="font-size:0.8rem;color:var(--ddb-text-muted);">Max for Mortgages</div></div></div>`;document.getElementById('results-area').innerHTML=html;drawChart(dti,totalDebt,income);}
+function drawChart(dti,debt,income){const c=document.getElementById('chartCanvas');const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);const cx=c.width/2,cy=c.height/2+10,r=90;ctx.beginPath();ctx.arc(cx,cy,r,0,2*Math.PI);ctx.strokeStyle='#e2e4e8';ctx.lineWidth=20;ctx.stroke();ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI/2,-Math.PI/2+(dti/100)*2*Math.PI);ctx.strokeStyle=dti<36?'#1a5f4a':dti<43?'#f5a623':'#e85d4e';ctx.lineWidth=20;ctx.stroke();ctx.fillStyle='#333';ctx.textAlign='center';ctx.font='bold 24px sans-serif';ctx.fillText(dti.toFixed(1)+'%',cx,cy+8);ctx.font='12px sans-serif';ctx.fillText('DTI Ratio',cx,cy+28);ctx.fillStyle='#1a5f4a';ctx.fillRect(40,20,12,12);ctx.fillStyle='#333';ctx.textAlign='left';ctx.fillText('Debt $'+debt.toFixed(0),58,30);ctx.fillStyle='#e2e4e8';ctx.fillRect(40,40,12,12);ctx.fillStyle='#333';ctx.fillText('Remaining $'+(income-debt).toFixed(0),58,50);}
+function resetForm(){['rent','car','student','cc','other','income'].forEach(k=>{const el=document.getElementById(k);if(el)el.value=''});localStorage.removeItem(STORAGE_KEY);document.getElementById('results-area').innerHTML='';document.getElementById('chartCanvas').getContext('2d').clearRect(0,0,500,300);}
+const relatedArticles=[{'url': '../blog/dti-explained-why-lenders-care-more-about-this-than-your-c.html', 'cat': 'Concepts', 'title': 'DTI Explained', 'desc': 'Why lenders care more than your score.'}, {'url': '../blog/using-the-dti-calculator-before-you-apply-for-a-loan.html', 'cat': 'Tutorials', 'title': 'Using DTI Before a Loan', 'desc': 'Calculate before you apply.'}, {'url': '../blog/two-families-same-income-different-debt-outcomes.html', 'cat': 'Stories', 'title': 'Two Families, Same Income', 'desc': 'Different outcomes.'}];
+const recTools=[{'url': './debt-payoff-calculator.html', 'title': 'Debt Payoff Calculator', 'desc': 'Plan your payoff.'}, {'url': './loan-amortization.html', 'title': 'Loan Amortization', 'desc': 'See every payment.'}, {'url': './credit-card-interest-calculator.html', 'title': 'Credit Card Interest', 'desc': 'True cost of minimums.'}];
+document.getElementById('related-articles').innerHTML=relatedArticles.map(a=>`<a href="${a.url}" class="ddb-article-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><span style="font-size:0.8rem;color:var(--ddb-primary);font-weight:600;">${a.cat}</span><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin:4px 0;">${a.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${a.desc}</p></a>`).join('');
+document.getElementById('recommended-tools').innerHTML=recTools.map(t=>`<a href="${t.url}" class="ddb-tool-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">${t.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${t.desc}</p></a>`).join('');
+loadData();
+</script>
+</body>
+</html>
