@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Loan Amortization Schedule | Debt Breakdown</title>
+<meta name="description" content="Generate a full month-by-month payment table for any mortgage, car, or personal loan. See principal vs. interest for every payment. Export to CSV.">
+
+<meta property="og:title" content="Loan Amortization Schedule | Debt Breakdown">
+<meta property="og:description" content="Generate a full month-by-month payment table for any mortgage, car, or personal loan. See principal vs. interest for every payment. Export to CSV.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://debtbreakdown.com/tools/loan-amortization.html">
+<meta property="og:image" content="https://debtbreakdown.com/images/og-default.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Loan Amortization Schedule | Debt Breakdown">
+<meta name="twitter:description" content="Generate a full month-by-month payment table for any mortgage, car, or personal loan. See principal vs. interest for every payment. Export to CSV.">
+<meta name="twitter:image" content="https://debtbreakdown.com/images/og-default.jpg">
+
+<link rel="canonical" href="https://debtbreakdown.com/tools/loan-amortization.html">
+<link rel="stylesheet" href="../style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://debtbreakdown.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://debtbreakdown.com/tools/index.html"},
+    {"@type": "ListItem", "position": 3, "name": "Loan Amortization Schedule", "item": "https://debtbreakdown.com/tools/loan-amortization.html"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Loan Amortization Schedule",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "description": "Generate a full month-by-month payment table for any mortgage, car, or personal loan. See principal vs. interest for every payment. Export to CSV.",
+  "url": "https://debtbreakdown.com/tools/loan-amortization.html"
+}
+</script>
+</head>
+<body>
+
+<nav class="ddb-nav">
+  <div class="ddb-container ddb-nav-inner">
+    <a href="../index.html" class="ddb-logo">Debt<span>Breakdown</span></a>
+    <button class="ddb-menu-btn" onclick="document.querySelector('.ddb-nav-links').classList.toggle('ddb-mobile-open')" aria-label="Toggle menu">☰</button>
+    <ul class="ddb-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Tool Top Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+</div>
+
+<div class="ddb-container" style="padding: 40px 24px;">
+  <nav class="ddb-breadcrumb" aria-label="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="ddb-breadcrumb-sep">/</span>
+    <a href="./index.html">Tools</a>
+    <span class="ddb-breadcrumb-sep">/</span>
+    <span>Loan Amortization Schedule</span>
+  </nav>
+</div>
+
+<div class="ddb-tool-layout">
+  <!-- Left: Input Panel -->
+  <div class="ddb-tool-panel">
+    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Loan Amortization Schedule</h2>
+    <div id="tool-inputs">
+      
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap;">
+      <button class="ddb-btn ddb-btn-primary" onclick="calculate()">Calculate</button>
+      <button class="ddb-btn ddb-btn-secondary" onclick="resetForm()">Reset</button>
+      <button class="ddb-btn ddb-btn-outline" onclick="exportResults()">Export PDF</button>
+    </div>
+    <p style="color: var(--ddb-text-muted); font-size: 0.85rem; margin-top: 16px;">All data stays in your browser — we never see it.</p>
+  </div>
+
+  <!-- Right: Results + Chart -->
+  <div>
+    <div class="ddb-chart-container" style="margin-bottom: 24px;">
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 16px;">Results</h3>
+      <div id="results-area"></div>
+    </div>
+    <div class="ddb-chart-container">
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 16px;">Visualization</h3>
+      <canvas id="chartCanvas" width="500" height="300" style="width: 100%; max-height: 300px;"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<!-- Tool Middle Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_middle" data-ad-slot="tool_middle"></div>
+</div>
+<!-- Related Articles + Tools -->
+<div class="ddb-container" style="padding: 40px 24px 80px;">
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+    <div>
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 20px;">Related Articles</h3>
+      <div id="related-articles"></div>
+    </div>
+    <div>
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 20px;">Recommended Tools</h3>
+      <div id="recommended-tools"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Tool Bottom Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+</div>
+
+<footer class="ddb-footer">
+  <div class="ddb-container">
+    <div class="ddb-footer-grid">
+      <div>
+        <h4>Debt Breakdown</h4>
+        <p style="font-size:0.9rem;color:#a0a0b0;line-height:1.6;">Tools and stories to help you understand, track, and eliminate your debt.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="./debt-payoff-calculator.html">Debt Payoff Calculator</a>
+        <a href="./credit-card-interest-calculator.html">Credit Card Interest</a>
+        <a href="./loan-amortization.html">Loan Amortization</a>
+        <a href="./debt-to-income-ratio.html">DTI Ratio</a>
+        <a href="./balance-transfer-calculator.html">Balance Transfer</a>
+        <a href="./extra-payment-analyzer.html">Extra Payment</a>
+        <a href="./snowball-vs-avalanche.html">Snowball vs Avalanche</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Use</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../disclosure.html">Affiliate Disclosure</a>
+      </div>
+    </div>
+    <div class="ddb-footer-bottom">
+      <p>© 2026 Debt Breakdown. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+
+const STORAGE_KEY = 'ddb_loan_amort';
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const d = JSON.parse(saved);
+    document.getElementById('loanAmount').value = d.amount || '';
+    document.getElementById('loanRate').value = d.rate || '';
+    document.getElementById('loanTerm').value = d.term || '';
+    document.getElementById('extraLoan').value = d.extra || '';
+  }
+}
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    amount: document.getElementById('loanAmount').value,
+    rate: document.getElementById('loanRate').value,
+    term: document.getElementById('loanTerm').value,
+    extra: document.getElementById('extraLoan').value
+  }));
+}
+
+function calculate() {
+  const P = parseFloat(document.getElementById('loanAmount').value) || 0;
+  const r = (parseFloat(document.getElementById('loanRate').value) || 0) / 100 / 12;
+  const n = (parseFloat(document.getElementById('loanTerm').value) || 0) * 12;
+  const extra = parseFloat(document.getElementById('extraLoan').value) || 0;
+  saveData();
+
+  if (P <= 0 || r <= 0 || n <= 0) {
+    document.getElementById('results-area').innerHTML = '<p style="color:var(--ddb-text-muted);">Enter amount, rate, and term.</p>';
+    return;
+  }
+
+  const payment = (P * r) / (1 - Math.pow(1 + r, -n));
+  let bal = P, totalInt = 0, schedule = [];
+  let month = 0;
+  while (bal > 0.01 && month < 600) {
+    month++;
+    let mi = bal * r;
+    let pr = payment - mi;
+    bal -= pr;
+    if (extra > 0) { bal -= extra; pr += extra; }
+    if (bal < 0) { bal = 0; }
+    totalInt += mi;
+    schedule.push({month, payment: payment+extra, interest: mi, principal: pr, balance: bal});
+  }
+
+  let html = `<div class="ddb-card" style="padding:20px;margin-bottom:16px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center;">
+      <div><div style="font-size:1.4rem;font-weight:800;color:var(--ddb-primary);">$${payment.toFixed(2)}</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Monthly Payment</div></div>
+      <div><div style="font-size:1.4rem;font-weight:800;color:var(--ddb-accent);">$${totalInt.toFixed(2)}</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Total Interest</div></div>
+      <div><div style="font-size:1.4rem;font-weight:800;">${month}</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Months</div></div>
+    </div>
+  </div>`;
+
+  html += '<div style="max-height:300px;overflow:auto;"><table class="ddb-table"><thead><tr><th>Month</th><th>Payment</th><th>Interest</th><th>Principal</th><th>Balance</th></tr></thead><tbody>';
+  schedule.slice(0, 24).forEach(row => {
+    html += `<tr><td>${row.month}</td><td>$${row.payment.toFixed(2)}</td><td>$${row.interest.toFixed(2)}</td><td>$${row.principal.toFixed(2)}</td><td>$${row.balance.toFixed(2)}</td></tr>`;
+  });
+  if (schedule.length > 24) html += '<tr><td colspan="5" style="text-align:center;color:var(--ddb-text-muted);">... ' + (schedule.length - 24) + ' more rows ...</td></tr>';
+  html += '</tbody></table></div>';
+
+  document.getElementById('results-area').innerHTML = html;
+  drawChart(schedule);
+}
+
+function drawChart(data) {
+  const canvas = document.getElementById('chartCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const maxM = data.length;
+  const maxP = data[0].payment;
+
+  ctx.fillStyle = '#e85d4e';
+  data.forEach((pt, i) => {
+    let x = 40 + (i / (maxM - 1)) * (canvas.width - 60);
+    let h = (pt.interest / maxP) * (canvas.height - 60);
+    let y = canvas.height - 30 - h;
+    ctx.fillRect(x - 2, y, 4, h);
+  });
+  ctx.fillStyle = '#1a5f4a';
+  data.forEach((pt, i) => {
+    let x = 40 + (i / (maxM - 1)) * (canvas.width - 60);
+    let h = (pt.principal / maxP) * (canvas.height - 60);
+    let y = canvas.height - 30 - h - ((pt.interest / maxP) * (canvas.height - 60));
+    ctx.fillRect(x - 2, y, 4, h);
+  });
+
+  ctx.fillStyle = '#e85d4e'; ctx.fillRect(canvas.width - 140, 20, 12, 12);
+  ctx.fillStyle = '#333'; ctx.fillText('Interest', canvas.width - 120, 30);
+  ctx.fillStyle = '#1a5f4a'; ctx.fillRect(canvas.width - 140, 40, 12, 12);
+  ctx.fillStyle = '#333'; ctx.fillText('Principal', canvas.width - 120, 50);
+}
+
+function resetForm() {
+  ['loanAmount','loanRate','loanTerm','extraLoan'].forEach(id => document.getElementById(id).value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results-area').innerHTML = '';
+  document.getElementById('chartCanvas').getContext('2d').clearRect(0,0,500,300);
+}
+function exportResults() {
+  let csv = 'Month,Payment,Interest,Principal,Balance
+';
+  const rows = document.querySelectorAll('.ddb-table tbody tr');
+  rows.forEach(r => {
+    const cells = r.querySelectorAll('td');
+    if (cells.length === 5) csv += Array.from(cells).map(c => c.textContent.replace('$','')).join(',') + '
+';
+  });
+  const blob = new Blob([csv], {type: 'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'amortization-schedule.csv';
+  a.click();
+}
+
+const inputsHtml = `
+  <div class="ddb-form-group"><label>Loan Amount ($)</label><input type="number" id="loanAmount" step="0.01"></div>
+  <div class="ddb-form-group"><label>Interest Rate (%)</label><input type="number" id="loanRate" step="0.01"></div>
+  <div class="ddb-form-group"><label>Term (Years)</label><input type="number" id="loanTerm" step="1"></div>
+  <div class="ddb-form-group"><label>Extra Monthly Payment ($)</label><input type="number" id="extraLoan" step="10" value="0"></div>
+`;
+document.getElementById('tool-inputs').innerHTML = inputsHtml;
+
+const relatedArticles = [
+  {url: '../blog/amortization-tables-seeing-where-every-dollar-goes.html', cat: 'Concepts', title: 'Amortization Tables', desc: 'Seeing where every dollar goes.'},
+  {url: '../blog/how-to-read-a-loan-amortization-schedule-without-falling.html', cat: 'Tutorials', title: 'How to Read Amortization', desc: 'Without falling asleep.'},
+  {url: '../blog/extra-payment-simulator-what-an-extra-50month-does-over-5.html', cat: 'Tutorials', title: 'Extra Payment Simulator', desc: 'What $50 extra does over 5 years.'}
+];
+const recTools = [
+  {url: './extra-payment-analyzer.html', title: 'Extra Payment Analyzer', desc: 'Compare extra payment scenarios.'},
+  {url: './debt-payoff-calculator.html', title: 'Debt Payoff Calculator', desc: 'Plan your full payoff.'},
+  {url: './credit-card-interest-calculator.html', title: 'Credit Card Interest', desc: 'See the cost of minimums.'}
+];
+document.getElementById('related-articles').innerHTML = relatedArticles.map(a => `<a href="${a.url}" class="ddb-article-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><span style="font-size:0.8rem;color:var(--ddb-primary);font-weight:600;">${a.cat}</span><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin:4px 0;">${a.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${a.desc}</p></a>`).join('');
+document.getElementById('recommended-tools').innerHTML = recTools.map(t => `<a href="${t.url}" class="ddb-tool-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">${t.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${t.desc}</p></a>`).join('');
+
+loadData();
+
+</script>
+</body>
+</html>
