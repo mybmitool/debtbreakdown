@@ -1,0 +1,27 @@
+{
+  "site_name": "Debt Breakdown",
+  "domain": "debtbreakdown.com",
+  "prefix": "ddb",
+  "author": "James Whitfield",
+  "author_email": "contact@debtbreakdown.com",
+  "language": "en",
+  "timezone": "America/Chicago",
+  "theme_color": "#1a5f4a",
+  "accent_color": "#e85d4e",
+  "favicon": "favicon.ico",
+  "og_image_default": "images/og-default.jpg",
+  "analytics_id": "",
+  "adsense_client": "",
+  "github_repo": "debtbreakdown",
+  "created_date": "2026-06-12",
+  "layout_combo": {
+    "home": "C",
+    "tools_index": "E",
+    "blog_index": "G",
+    "post": "D",
+    "tool_detail": "H",
+    "about": "B",
+    "contact": "C",
+    "faq": "C"
+  }
+}
