@@ -1,0 +1,52 @@
+# debtbreakdown.com
+
+Free online calculators and educational content. Not professional advice.
+
+## Pages
+- Home: https://debtbreakdown.com/
+- Tools: https://debtbreakdown.com/tools/
+- Blog: https://debtbreakdown.com/blog/
+- About: https://debtbreakdown.com/about.html
+- Contact: https://debtbreakdown.com/contact.html
+- FAQ: https://debtbreakdown.com/faq.html
+- Sitemap: https://debtbreakdown.com/sitemap.html
+
+## Tools
+- Balance Transfer Calculator | Debt Breakdown: https://debtbreakdown.com/tools/balance-transfer-calculator.html
+- Credit Card Interest Calculator | Debt Breakdown: https://debtbreakdown.com/tools/credit-card-interest-calculator.html
+- Debt Payoff Calculator | Debt Breakdown: https://debtbreakdown.com/tools/debt-payoff-calculator.html
+- DTI Ratio Calculator | Debt Breakdown: https://debtbreakdown.com/tools/debt-to-income-ratio.html
+- Extra Payment Analyzer | Debt Breakdown: https://debtbreakdown.com/tools/extra-payment-analyzer.html
+- Loan Amortization Schedule | Debt Breakdown: https://debtbreakdown.com/tools/loan-amortization.html
+- Snowball vs. Avalanche Visualizer | Debt Breakdown: https://debtbreakdown.com/tools/snowball-vs-avalanche.html
+
+## Articles
+- Credit Card Minimum Payment Trap 2026 (credit-card-minimum-payment-trap-2026) -- I paid the minimum on my credit card for three years. Every month. On time. Never missed. And my balance went from $8,200 to $9,400. I was paying them religiously, and I owed more than when I started. -- July 23, 2026
+- Austin Heat Debt Credit Card (austin-heat-debt-credit-card) -- How a $247 Electric Bill in Austin Forced Me to Rethink My Entire Debt Strategy James Whitfield I opened my electric bill on July 3rd and felt the same sensation I get when I check my credit card stat -- July 06, 2026
+- Snowball Vs Avalanche Saved 800 Wrong Method (snowball-vs-avalanche-saved-800-wrong-method) -- I knew the math before I started. The debt avalanche — paying off highest-interest debt first — would save me $847 in interest over the life of my payoff plan. The debt snowball — paying off smallest -- July 06, 2026
+- The 8000 Credit Card I Paid Off With A Side Hustle (the-8000-credit-card-i-paid-off-with-a-side-hustle) -- The $8,000 Credit Card I Paid Off With a Side Hustle (No, Not Dropshipping) I am going to tell you about a guy named David. Not a client. Not a composite. A real person who sat across from me at a cof -- June 26, 2026
+- Why Does My Credit Card Statement Look Like A Subscription (why-does-my-credit-card-statement-look-like-a-subscription) -- Why Does My Credit Card Statement Look Like a Subscription to Poverty? Have you ever looked at your credit card statement and felt like you were reading a horror story written in APR? I have. Last mon -- June 24, 2026
+- Debt Strategies in a High-Rate Environment (2026 Edition) | Debt Breakdown (debt-strategies-in-a-high-rate-environment-2026-edition) -- The Fed rate is around 5.5% right now. Your credit card APR is probably 22-28%. That’s not a coincidence. That’s how the system works.  I’m not going to explain -- June 15, 2026
+- How Federal Rate Changes Trickle Down to Your Credit Card | Debt Breakdown (how-federal-rate-changes-trickle-down-to-your-credit-card) -- The Fed raised rates again. When will your statement reflect it? Probably already has.  I get this question every time the Federal Reserve meets. Someone sees t -- June 14, 2026
+- Balance Transfer Calculator: Is It Worth the Fee? | Debt Breakdown (balance-transfer-calculator-is-it-worth-the-fee) -- 3% transfer fee on $10k is $300. Is that worth it? Let’s do the math.  I get this question all the time. Someone has a credit card at 24%. They get an offer in -- June 13, 2026
+- How I Helped a Teacher Pay Off $47k in Debt (Without a Second Job) | Debt Breakdown (how-i-helped-a-teacher-pay-off-47k-in-debt-without-a-secon) -- The email came in at 11:47 PM on a Tuesday.  Subject: “I don’t know what to do anymore.”  I was half-asleep on the couch, some college basketball game on mute. -- June 12, 2026
+- Should you invest or pay down debt? Trick question. | Debt Breakdown (should-you-invest-or-pay-down-debt-trick-question) -- I get asked this at least once a week. Someone has $10,000 in credit card debt at 22% and $5,000 in savings. They want to know if they should put the $5,000 tow -- June 11, 2026
+- The Truth About 0% APR Balance Transfer Offers | Debt Breakdown (the-truth-about-0-apr-balance-transfer-offers) -- That 0% APR offer isn’t charity. It’s marketing.  I get these in the mail every week. “You’re pre-approved! 0% interest for 18 months on balance transfers!” Big -- June 10, 2026
+- Extra Payment Simulator: What an Extra $50/month Does Over 5 Years | Debt Breakdown (extra-payment-simulator-what-an-extra-50month-does-over-5) -- An extra $50 a month saves you $1,800 in interest. That’s a 300% return.  Let me show you how.  I was on a flight once, sitting next to a guy who sold insurance -- June 09, 2026
+- Two Families, Same Income, Different Debt Outcomes | Debt Breakdown (two-families-same-income-different-debt-outcomes) -- Both made $75k. One had $0 debt after 3 years. One had $30k more.  I met them at the same time. Two families, different approaches to money. Same income, same c -- June 08, 2026
+- #25 Inflation and Debt: Why Your $10k Loan Is Actually Getting Cheaper | Debt Breakdown (inflation-and-debt-why-your-10k-loan-is-actually-getting) -- Inflation is terrible for savings. But for fixed-rate debt? Not so terrible.  I know that sounds weird. You’re paying more for everything – gas, groceries, rent -- June 07, 2026
+- The Minimum Payment Trap: A Real Story | Debt Breakdown (the-minimum-payment-trap-a-real-story) -- You think minimum payments are helping you?  I’ll tell you about a guy named Marcus. Not the firefighter from earlier – a different Marcus. This Marcus was an e -- June 06, 2026
+- Snowball vs. Avalanche: Which One Actually Saves You Money? | Debt Breakdown (snowball-vs-avalanche-which-one-actually-saves-you-money) -- Do you want to feel good or pay less?  I ask this question at least once a week. Someone comes to me with five credit cards, a car loan, and a personal loan the -- June 05, 2026
+- The Card Negotiation Script: What to Say, When to Say It | Debt Breakdown (the-card-negotiation-script-what-to-say-when-to-say-it) -- Write this down. Use these exact words.  I’m not kidding. Put this on a sticky note next to your phone. Because when you’re on the line with a credit card rep, -- June 04, 2026
+- Credit Score vs. Interest Rate: The $10,000 Difference | Debt Breakdown (credit-score-vs-interest-rate-the-10000-difference) -- A 100-point credit score difference can cost you $10,000 over a 5-year loan.  I’m not making that up. I’ve seen it happen. Someone I worked with – let’s call hi -- June 03, 2026
+- How to Negotiate a Lower APR With Your Credit Card Company | Debt Breakdown (how-to-negotiate-a-lower-apr-with-your-credit-card-company) -- Pick up the phone. Yes, right now.  I know you don't want to. Nobody does. I spent eight years at a bank and I still get nervous calling my own credit card comp -- June 02, 2026
+- What I Saw When I Left Banking (And Why I Started Writing) | Debt Breakdown (what-i-saw-when-i-left-banking-and-why-i-started-writing) -- I used to sell credit cards. I’m not proud of it.  This was around 2014 or 2015 – I forget the exact year. I was working at a regional bank in Austin. My job wa -- May 30, 2026
+- Using the DTI Calculator Before You Apply for a Loan | Debt Breakdown (using-the-dti-calculator-before-you-apply-for-a-loan) -- You’re about to apply for a mortgage. Do you know your DTI? No? Stop.  I’ve seen this happen dozens of times. Someone finds a house they love. They make an offe -- May 29, 2026
+- DTI Explained: Why Lenders Care More About This Than Your Credit Score | Debt Breakdown (dti-explained-why-lenders-care-more-about-this-than-your-c) -- Your credit score is 720. Your DTI is 48%. Guess which one matters more when you apply for a mortgage.  I’ll save you the suspense – it’s the DTI. Every time. -- May 28, 2026
+- Build a Debt Tracker From Scratch (No Apps Needed) | Debt Breakdown (build-a-debt-tracker-from-scratch-no-apps-needed) -- I used to use six different apps to track my money.  Mint, YNAB, EveryDollar, a spreadsheet I found on Reddit, a notebook my wife bought me that said “DEBT FREE -- May 27, 2026
+- Amortization Tables: Seeing Where Every Dollar Goes | Debt Breakdown (amortization-tables-seeing-where-every-dollar-goes) -- You make a $500 payment. How much goes to principal? Guess.  Most people have no idea. I didn’t either until I started working at a bank. I remember sitting in -- May 26, 2026
+- The 30-Day Credit Card Cleanse | Debt Breakdown (the-30-day-credit-card-cleanse) -- The average household has $7,500 in credit card debt. That’s not a flex.  I’m not here to shame you. I’ve been there. Not personally – I was lucky – but I’ve wa -- May 25, 2026
+- How to Use the Debt Payoff Calculator to Plan Your Next 12 Months | Debt Breakdown (how-to-use-the-debt-payoff-calculator-to-plan-your-next) -- You have six debts. Minimum payments total $800. You have $300 extra. What now?  I get this question all the time. People come to me with a list of credit cards -- May 23, 2026
+- APR vs. APY vs. Effective Rate: The Real Difference | Debt Breakdown (apr-vs-apy-vs-effective-rate-the-real-difference) -- You think APR is the whole story? It’s not even half.  I used to work with a guy who sold mortgages. He’d tell clients “the APR is 4.5%” and they’d nod. Then at -- May 22, 2026
+- How to Read a Loan Amortization Schedule (Without Falling Asleep) | Debt Breakdown (how-to-read-a-loan-amortization-schedule-without-falling) -- You’ve seen that table of numbers. You ignored it. I don’t blame you.  It looks like someone fell asleep on a keyboard. Rows and rows of digits. Payment numbers -- May 21, 2026
+- 6 How Compound Interest Becomes a Debt Killer (When You're Not Careful) | Debt Breakdown (how-compound-interest-becomes-a-debt-killer-when-youre-not) -- Compound interest is a miracle for investors. For borrowers? A nightmare.  I learned this the hard way. Not because I had credit card debt – I was lucky – but b -- May 20, 2026
