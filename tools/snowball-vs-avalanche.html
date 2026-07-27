@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Snowball vs. Avalanche Visualizer | Debt Breakdown</title>
+<meta name="description" content="Side-by-side comparison of snowball and avalanche debt payoff strategies. Timeline charts and interest difference.">
+<meta property="og:title" content="Snowball vs. Avalanche Visualizer | Debt Breakdown">
+<meta property="og:description" content="Side-by-side comparison of snowball and avalanche debt payoff strategies. Timeline charts and interest difference.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://debtbreakdown.com/tools/snowball-vs-avalanche.html">
+<meta property="og:image" content="https://debtbreakdown.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://debtbreakdown.com/tools/snowball-vs-avalanche.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://debtbreakdown.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://debtbreakdown.com/tools/index.html"},{"@type":"ListItem","position":3,"name":"Snowball vs. Avalanche Visualizer","item":"https://debtbreakdown.com/tools/snowball-vs-avalanche.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Snowball vs. Avalanche Visualizer","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://debtbreakdown.com/tools/snowball-vs-avalanche.html"}</script>
+</head>
+<body>
+<nav class="ddb-nav"><div class="ddb-container ddb-nav-inner"><a href="../index.html" class="ddb-logo">Debt<span>Breakdown</span></a><button class="ddb-menu-btn" onclick="document.querySelector('.ddb-nav-links').classList.toggle('ddb-mobile-open')" aria-label="Toggle menu">☰</button><ul class="ddb-nav-links"><li><a href="../index.html">Home</a></li><li><a href="./index.html">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<!-- Tool Top Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+</div>
+
+<div class="ddb-container" style="padding:40px 24px;"><nav class="ddb-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span class="ddb-breadcrumb-sep">/</span><a href="./index.html">Tools</a><span class="ddb-breadcrumb-sep">/</span><span>Snowball vs. Avalanche Visualizer</span></nav></div>
+<div class="ddb-tool-layout">
+  <div class="ddb-tool-panel">
+    <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">Snowball vs. Avalanche Visualizer</h2>
+    <div id="tool-inputs"><div class="ddb-form-group"><label>Debt 1: Balance, Rate, Min</label><input type="text" id="d1" placeholder="2500, 24, 65"></div>
+<div class="ddb-form-group"><label>Debt 2: Balance, Rate, Min</label><input type="text" id="d2" placeholder="8000, 19, 160"></div>
+<div class="ddb-form-group"><label>Debt 3: Balance, Rate, Min</label><input type="text" id="d3" placeholder="5000, 12, 100"></div>
+<div class="ddb-form-group"><label>Debt 4: Balance, Rate, Min</label><input type="text" id="d4" placeholder="12000, 7, 300"></div>
+<div class="ddb-form-group"><label>Extra Monthly Payment ($)</label><input type="number" id="extra" value="300" step="10"></div></div>
+    <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+      <button class="ddb-btn ddb-btn-primary" onclick="calculate()">Calculate</button>
+      <button class="ddb-btn ddb-btn-secondary" onclick="resetForm()">Reset</button>
+      <button class="ddb-btn ddb-btn-outline" onclick="window.print()">Export PDF</button>
+    </div>
+    <p style="color:var(--ddb-text-muted);font-size:0.85rem;margin-top:16px;">All data stays in your browser — we never see it.</p>
+  </div>
+  <div>
+    <div class="ddb-chart-container" style="margin-bottom:24px;"><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Results</h3><div id="results-area"></div></div>
+    <div class="ddb-chart-container"><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Visualization</h3><canvas id="chartCanvas" width="500" height="300" style="width:100%;max-height:300px;"></canvas></div>
+  </div>
+</div>
+<div class="ddb-container" style="padding:40px 24px 80px;"><div style="display:grid;grid-template-columns:2fr 1fr;gap:40px;"><!-- Tool Middle Ad --><div class="ddb-container"><div class="ddb-ad-slot" id="tool_middle" data-ad-slot="tool_middle"></div></div>
+<div><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:20px;">Related Articles</h3><div id="related-articles"></div></div><div><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:20px;">Recommended Tools</h3><div id="recommended-tools"></div></div></div></div>
+<!-- Tool Bottom Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+</div>
+
+<footer class="ddb-footer"><div class="ddb-container"><div class="ddb-footer-grid"><div><h4>Debt Breakdown</h4><p style="font-size:0.9rem;color:#a0a0b0;line-height:1.6;">Tools and stories to help you understand, track, and eliminate your debt.</p></div><div><h4>Tools</h4><a href="./debt-payoff-calculator.html">Debt Payoff Calculator</a><a href="./credit-card-interest-calculator.html">Credit Card Interest</a><a href="./loan-amortization.html">Loan Amortization</a><a href="./debt-to-income-ratio.html">DTI Ratio</a><a href="./balance-transfer-calculator.html">Balance Transfer</a><a href="./extra-payment-analyzer.html">Extra Payment</a><a href="./snowball-vs-avalanche.html">Snowball vs Avalanche</a></div><div><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../faq.html">FAQ</a><a href="../blog/index.html">Blog</a></div><div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a><a href="../disclaimer.html">Disclaimer</a><a href="../disclosure.html">Affiliate Disclosure</a></div></div><div class="ddb-footer-bottom"><p>© 2026 Debt Breakdown. All rights reserved.</p></div></div></footer>
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY='ddb_sva';
+function loadData(){const s=localStorage.getItem(STORAGE_KEY);if(s){const d=JSON.parse(s);['d1','d2','d3','d4','extra'].forEach(k=>{const el=document.getElementById(k);if(el)el.value=d[k]||''});}}
+function saveData(){const d={};['d1','d2','d3','d4','extra'].forEach(k=>{const el=document.getElementById(k);if(el)d[k]=el.value});localStorage.setItem(STORAGE_KEY,JSON.stringify(d));}
+function parseDebt(id){const v=document.getElementById(id).value;if(!v)return null;const p=v.split(',').map(x=>parseFloat(x.trim()));if(p.length<3)return null;return{balance:p[0],rate:p[1],min:p[2]};}
+function runStrategy(debts,extra,sortFn){let d=debts.map(x=>({...x}));d.sort(sortFn);let months=0,totalInt=0,data=[];while(d.some(x=>x.balance>0.01)&&months<600){months++;let ex=extra;let mi=0;d.forEach(x=>{if(x.balance>0){let int=x.balance*(x.rate/100/12);x.balance+=int;mi+=int;let pay=Math.min(x.min,x.balance);x.balance-=pay;}});d.forEach(x=>{if(x.balance>0&&ex>0){let pay=Math.min(ex,x.balance);x.balance-=pay;ex-=pay;}});totalInt+=mi;data.push({month:months,balance:d.reduce((s,x)=>s+x.balance,0)});}return{months,totalInt,data};}
+function calculate(){const debts=[parseDebt('d1'),parseDebt('d2'),parseDebt('d3'),parseDebt('d4')].filter(x=>x);const extra=parseFloat(document.getElementById('extra').value)||0;saveData();if(debts.length===0){document.getElementById('results-area').innerHTML='<p style="color:var(--ddb-text-muted);">Enter at least one debt.</p>';return;}const sb=runStrategy(debts,extra,(a,b)=>a.balance-b.balance);const av=runStrategy(debts,extra,(a,b)=>b.rate-a.rate);let html=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;"><div class="ddb-card" style="padding:16px;"><h4 style="color:var(--ddb-primary);margin-bottom:8px;">Snowball</h4><div style="font-size:1.4rem;font-weight:800;">${sb.months} mo</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Interest: $${sb.totalInt.toFixed(2)}</div></div><div class="ddb-card" style="padding:16px;"><h4 style="color:var(--ddb-accent);margin-bottom:8px;">Avalanche</h4><div style="font-size:1.4rem;font-weight:800;">${av.months} mo</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Interest: $${av.totalInt.toFixed(2)}</div></div></div>`;html+=`<p style="color:var(--ddb-text-muted);font-size:0.9rem;">Avalanche saves $${(sb.totalInt-av.totalInt).toFixed(2)} and ${sb.months-av.months} months. ${sb.totalInt-av.totalInt<500?'The difference is small — pick what motivates you.':'The difference is significant — avalanche is strongly recommended.'}</p>`;document.getElementById('results-area').innerHTML=html;drawChart(sb.data,av.data);}
+function drawChart(a,b){const c=document.getElementById('chartCanvas');const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);const maxM=Math.max(a.length,b.length);const maxB=Math.max(a[0]?.balance||0,b[0]?.balance||0);function draw(data,color){ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();data.forEach((pt,i)=>{let x=40+(i/(maxM-1))*(c.width-60);let y=c.height-30-(pt.balance/maxB)*(c.height-60);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();}draw(a,'#1a5f4a');draw(b,'#e85d4e');ctx.fillStyle='#1a5f4a';ctx.fillRect(c.width-140,20,12,12);ctx.fillStyle='#333';ctx.fillText('Snowball',c.width-120,30);ctx.fillStyle='#e85d4e';ctx.fillRect(c.width-140,40,12,12);ctx.fillStyle='#333';ctx.fillText('Avalanche',c.width-120,50);}
+function resetForm(){['d1','d2','d3','d4','extra'].forEach(k=>{const el=document.getElementById(k);if(el)el.value=''});localStorage.removeItem(STORAGE_KEY);document.getElementById('results-area').innerHTML='';document.getElementById('chartCanvas').getContext('2d').clearRect(0,0,500,300);}
+const relatedArticles=[{'url': '../blog/snowball-vs-avalanche-which-one-actually-saves-you-money.html', 'cat': 'Strategy', 'title': 'Snowball vs. Avalanche', 'desc': 'Which one actually saves you money?'}, {'url': '../blog/diy-debt-management-a-4step-system.html', 'cat': 'Tutorials', 'title': 'DIY Debt Management', 'desc': 'A 4-step system that works.'}, {'url': '../blog/how-to-use-the-debt-payoff-calculator-to-plan-your-next.html', 'cat': 'Tutorials', 'title': 'Use the Calculator', 'desc': 'Step-by-step walkthrough.'}];
+const recTools=[{'url': './debt-payoff-calculator.html', 'title': 'Debt Payoff Calculator', 'desc': 'Full payoff planner.'}, {'url': './extra-payment-analyzer.html', 'title': 'Extra Payment Analyzer', 'desc': 'Impact of extra payments.'}, {'url': './credit-card-interest-calculator.html', 'title': 'Credit Card Interest', 'desc': 'True cost of minimums.'}];
+document.getElementById('related-articles').innerHTML=relatedArticles.map(a=>`<a href="${a.url}" class="ddb-article-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><span style="font-size:0.8rem;color:var(--ddb-primary);font-weight:600;">${a.cat}</span><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin:4px 0;">${a.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${a.desc}</p></a>`).join('');
+document.getElementById('recommended-tools').innerHTML=recTools.map(t=>`<a href="${t.url}" class="ddb-tool-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">${t.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${t.desc}</p></a>`).join('');
+loadData();
+</script>
+</body>
+</html>
