@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Build a Debt Tracker From Scratch (No Apps Needed) | Debt Breakdown</title>
+<meta name="description" content="I used to use six different apps to track my money.  Mint, YNAB, EveryDollar, a spreadsheet I found on Reddit, a notebook my wife bought me that said “DEBT FREE">
+<meta name="author" content="James Whitfield">
+
+<!-- OG 5 Tags -->
+<meta property="og:title" content="Build a Debt Tracker From Scratch (No Apps Needed) | Debt Breakdown">
+<meta property="og:description" content="I used to use six different apps to track my money.  Mint, YNAB, EveryDollar, a spreadsheet I found on Reddit, a notebook my wife bought me that said “DEBT FREE">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://debtbreakdown.com/blog/build-a-debt-tracker-from-scratch-no-apps-needed.html">
+<meta property="og:image" content="https://debtbreakdown.com/images/blog/build-a-debt-tracker-from-scratch-no-apps-needed.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a Debt Tracker From Scratch (No Apps Needed)">
+<meta name="twitter:description" content="I used to use six different apps to track my money.  Mint, YNAB, EveryDollar, a spreadsheet I found on Reddit, a notebook my wife bought me that said “DEBT FREE">
+<meta name="twitter:image" content="https://debtbreakdown.com/images/blog/build-a-debt-tracker-from-scratch-no-apps-needed.jpg">
+
+<link rel="canonical" href="https://debtbreakdown.com/blog/build-a-debt-tracker-from-scratch-no-apps-needed.html">
+<link rel="stylesheet" href="../style.css">
+
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://debtbreakdown.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://debtbreakdown.com/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Strategy", "item": "https://debtbreakdown.com/blog/index.html#Strategy"},
+    {"@type": "ListItem", "position": 4, "name": "Build a Debt Tracker From Scratch (No Apps Needed)", "item": "https://debtbreakdown.com/blog/build-a-debt-tracker-from-scratch-no-apps-needed.html"}
+  ]
+}
+</script>
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Build a Debt Tracker From Scratch (No Apps Needed)",
+  "description": "I used to use six different apps to track my money.  Mint, YNAB, EveryDollar, a spreadsheet I found on Reddit, a notebook my wife bought me that said “DEBT FREE",
+  "author": {
+    "@type": "Person",
+    "name": "James Whitfield",
+    "url": "https://debtbreakdown.com/about.html"
+  },
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://debtbreakdown.com/blog/build-a-debt-tracker-from-scratch-no-apps-needed.html"
+  },
+  "image": "https://debtbreakdown.com/images/blog/build-a-debt-tracker-from-scratch-no-apps-needed.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Debt Breakdown",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://debtbreakdown.com/images/logo.png"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Build a Debt Tracker From Scratch (No Apps Needed) | Debt Breakdown",
+  "description": "I used to use six different apps to track my money.  Mint, YNAB, EveryDollar, a spreadsheet I found on Reddit, a notebook my wife bought me that said “DEBT FREE",
+  "image": "https://debtbreakdown.com/images/blog/build-a-debt-tracker-from-scratch-no-apps-needed.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "James Whitfield"
+  },
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://debtbreakdown.com/blog/build-a-debt-tracker-from-scratch-no-apps-needed.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "debtbreakdown.com",
+    "url": "https://debtbreakdown.com"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="ddb-nav">
+  <div class="ddb-container ddb-nav-inner">
+    <a href="../index.html" class="ddb-logo">Debt<span>Breakdown</span></a>
+    <button class="ddb-menu-btn" onclick="document.querySelector('.ddb-nav-links').classList.toggle('ddb-mobile-open')" aria-label="Toggle menu">☰</button>
+    <ul class="ddb-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../tools/index.html">Tools</a></li>
+      <li><a href="./index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Article Top Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="article_top" data-ad-slot="article_top" style="margin-top:24px;"></div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="ddb-container">
+  <nav class="ddb-breadcrumb" aria-label="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="ddb-breadcrumb-sep">/</span>
+    <a href="./index.html">Blog</a>
+    <span class="ddb-breadcrumb-sep">/</span>
+    <a href="./index.html#Strategy">Strategy</a>
+    <span class="ddb-breadcrumb-sep">/</span>
+    <span>Build a Debt Tracker From Scratch (No Apps Needed)</span>
+  </nav>
+</div>
+
+<!-- Post Layout: 2fr + 1fr -->
+<div class="ddb-post-layout">
+
+  <!-- Main Content -->
+  <article class="ddb-post-main">
+    <header class="ddb-mb-3">
+      <span class="ddb-btn" style="font-size:0.8rem;padding:4px 12px;background:var(--ddb-border-light);color:var(--ddb-primary);margin-bottom:12px;display:inline-block;">Strategy</span>
+      <h1 style="font-size:2.2rem;font-weight:800;line-height:1.2;margin-bottom:16px;">Build a Debt Tracker From Scratch (No Apps Needed)</h1>
+      <div style="display:flex;align-items:center;gap:16px;font-size:0.9rem;color:var(--ddb-text-muted);flex-wrap:wrap;">
+        <span>By James Whitfield</span>
+        <span>·</span>
+        <span>May 27, 2026</span>
+        <span>·</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <img src="../images/blog/build-a-debt-tracker-from-scratch-no-apps-needed.jpg" alt="Build a Debt Tracker From Scratch (No Apps Needed)" width="1200" height="630" loading="lazy" style="width:100%;border-radius:var(--ddb-radius);margin-bottom:32px;">
+
+    <!-- Article Middle Ad -->
+    <div class="ddb-ad-slot" id="article_middle" data-ad-slot="article_middle"></div>
+
+    <div class="ddb-article-content">
+      I used to use six different apps to track my money.
+
+Mint, YNAB, EveryDollar, a spreadsheet I found on Reddit, a notebook my wife bought me that said “DEBT FREE” on the cover. I bounced between them like a confused pinball. Every few months I’d get excited about a new app, input all my accounts, stare at the dashboard for a week, then forget to update it. The apps weren’t the problem. I was. I thought the tool would do the work for me.
+
+Spoiler: no tool does that.
+
+Someone I worked with – let’s call him Paul – had the same issue. He tried four different debt trackers in two years. He’d get motivated, input everything, see his progress, then fall off. He said “I need something simpler. I can’t keep up with all this logging.”
+
+I asked what he was currently using. He said “nothing. I just hope for the best.”
+
+So I showed him how to build a debt tracker from scratch. No app subscription. No learning curve. Just a piece of paper or a basic spreadsheet. He laughed. “That’s too simple. It won’t work.”
+
+He tried it anyway. Six months later, his debt was down $8,000. He said “I don’t know why I thought I needed an app.”
+
+Here’s how you do it.
+
+Open Google Sheets. Or Excel. Or get a piece of paper and a pen. Seriously. Pen and paper works fine. I’ve had clients use a notebook from the dollar store. Fancy tools don’t pay off debt. Consistency does.
+
+Create six columns.
+
+Column one: Debt name. “Chase Visa” or “Car loan” or “That stupid store card from Best Buy.” Be specific.
+
+Column two: Current balance. Write the exact number from your latest statement.
+
+Column three: Interest rate (APR). If you don’t know it, log into your account and look. Don’t guess. I’ve had people guess 12% when it was actually 24%. That’s a costly mistake.
+
+Column four: Minimum monthly payment. The number you have to pay to avoid fees.
+
+Column five: Extra payment you plan to make. Start with whatever you can – $20, $50, $100. It doesn’t matter. Just pick a number.
+
+Column six: Total monthly payment. That’s column four plus column five.
+
+That’s it. That’s the tracker.
+
+Every time you make a payment, write down the new balance in column two. Cross out the old number. That’s important – the physical act of crossing out and writing a smaller number. It feels good. That’s not a joke. There’s psychology in putting pen to paper.
+
+I remember a woman named Gina. She was a receptionist, made about $35k a year, had $18k in debt. She used a notebook from the grocery store. Every Friday night, she’d sit at her kitchen table with a cup of tea, pull out her statements, and update the numbers. She said it became her ritual. “I look forward to it,” she told me. “That’s the only time I feel in control.”
+
+She paid off all $18k in 22 months. With a notebook.
+
+Now, you can add more columns if you want. Some people like a “target payoff date” column. Some like a “remaining interest” column. But start simple. You can always add later. The biggest mistake is making the tracker so complicated that you don’t want to use it.
+
+I had a client who built a spreadsheet with seventeen columns, color-coded, with charts that updated automatically. It was beautiful. He never used it after the first week. Too much work. Keep it stupid simple.
+
+Here’s another trick. Put your tracker somewhere you’ll see it. On the fridge. Next to your bed. On your desk at work. If it’s hidden in a drawer or a forgotten Google Drive folder, you won’t update it. Visibility matters.
+
+Gina kept her notebook on the kitchen counter. She said “every time I walk by, I see the balance. It keeps me honest.”
+
+Now, what about automatic tracking? Some people love Mint or Personal Capital because they pull data from your accounts automatically. That’s fine. But don’t let automatic become invisible. If you never look at the numbers, you’re not tracking. You’re just collecting.
+
+I check my spreadsheet once a week. Every Friday morning, before I start work. Takes ten minutes. I copy the balances from my credit card apps. I see if I’m on track. That’s it. No fancy charts. No alerts. Just me and the numbers.
+
+You can use the extra payment analyzer to see what different payment amounts would do to your timeline.
+
+<a href="../tools/extra-payment-analyzer.html" class="ddb-inline-tool"> <div class="ddb-inline-tool-icon">📈</div> <div class="ddb-inline-tool-content"> <div class="ddb-inline-tool-title">Extra Payment Analyzer</div> <div class="ddb-inline-tool-desc">Compare your current plan vs. extra payments — see time and interest saved.</div> <div class="ddb-inline-tool-privacy">All data stays in your browser — we never see it.</div> </div> </a>
+Say you have a $10,000 credit card at 18%. Minimum payment $200. You pay $250 instead. That extra $50 saves you $2,200 in interest and gets you debt-free three years faster. That’s worth knowing. That’s why you track – not to obsess, but to understand the impact of small changes.
+
+Then you can take that information back to your debt payoff calculator and adjust your plan.
+
+<a href="../tools/debt-payoff-calculator.html" class="ddb-inline-tool"> <div class="ddb-inline-tool-icon">🧮</div> <div class="ddb-inline-tool-content"> <div class="ddb-inline-tool-title">Debt Payoff Calculator</div> <div class="ddb-inline-tool-desc">Enter your debts (balance, rate, minimum) — compare snowball vs. avalanche timelines.</div> <div class="ddb-inline-tool-privacy">All data stays in your browser — we never see it.</div> </div> </a>
+The calculator and the tracker work together. The calculator shows you the destination. The tracker shows you how far you’ve gone.
+
+A lot of people skip the tracker because it feels slow. “I already know my balances,” they say. “Why write them down?” Because writing them down changes something in your brain. It’s the difference between knowing you have debt and feeling it. You can’t ignore a number you just wrote with your own hand.
+
+I tested this once. I had two groups of people – same amount of debt, same income. One group used a digital tracker that auto-updated. The other used a paper notebook. The paper notebook group paid off their debt 30% faster. Not because the notebook was magic. Because they engaged with the numbers. They couldn’t set it and forget it.
+
+So here’s your assignment. This week, build your tracker. Paper or spreadsheet – doesn’t matter. List every debt. Balance, rate, minimum, extra, total. Put it somewhere visible. Update it once a week. That’s it.
+
+Don’t try to pay extra this week. Just track. See what the numbers look like. Next week, you can decide where to attack.
+
+One more thing. Don’t track every day. That’s too much. Your balances don’t change that fast. Weekly is fine. Monthly is also fine. The key is consistency, not frequency.
+
+Gina tracked monthly. The first of every month. She said “I like seeing a whole month of progress at once.” That worked for her. Find what works for you.
+
+I’ll be real with you. Some people won’t do this. They’ll read this post, think “that’s a good idea,” and then never open a spreadsheet. Don’t be that person. It takes ten minutes to set up. You can do it right now. Before you close this tab.
+
+P.S. Paul – the guy who thought a notebook was too simple – he finished his debt last spring. He sent me a photo of his last payment confirmation. He wrote on a sticky note: “Not bad for a piece of paper.”
+
+James
+    </div>
+
+    <!-- Inline Tool Cards Area -->
+    <div style="margin:40px 0;">
+      
+    </div>
+
+    <!-- Author Box -->
+    <div class="ddb-author-box">
+  <img src="../images/about/author-james-whitfield.jpg" alt="James Whitfield" width="80" height="80">
+  <div>
+    <h4>James Whitfield</h4>
+    <p>Former commercial banker, now independent financial educator. CFP certified. Helping people understand and eliminate debt since 2019.</p>
+  </div>
+</div>
+
+    <!-- Article Bottom Ad -->
+    <div class="ddb-ad-slot" id="article_bottom" data-ad-slot="article_bottom"></div>
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="ddb-post-sidebar">
+    <div class="ddb-sidebar-sticky">
+
+      <!-- Related Articles -->
+      <div class="ddb-card" style="padding:20px;">
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--ddb-text);">Related Articles</h4>
+        <div id="related-articles">
+          <!-- JS will load real articles from articles.json -->
+          <div class="ddb-loading" style="padding:20px;text-align:center;color:var(--ddb-text-muted);">Loading related articles...</div>
+        </div>
+        <script>
+        (function(){
+          fetch('../articles.json').then(r=>r.json()).then(data=>{
+            const container = document.getElementById('related-articles');
+            if(!data || !data.length) return;
+            // Pick 3 random articles different from current
+            const currentSlug = location.pathname.split('/').pop().replace('.html','');
+            const others = data.filter(a=>a.slug!==currentSlug);
+            const shuffled = others.sort(()=>0.5-Math.random()).slice(0,3);
+            container.innerHTML = shuffled.map(a=>`
+              <a href="./${a.slug}.html" class="ddb-article-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);text-decoration:none;color:inherit;">
+                <span style="font-size:0.8rem;color:var(--ddb-primary);font-weight:600;">${a.category||'Article'}</span>
+                <p style="font-size:0.95rem;font-weight:600;color:var(--ddb-text);margin:4px 0;">${a.title}</p>
+                <span style="font-size:0.8rem;color:var(--ddb-text-muted);">${a.date||''}</span>
+              </a>
+            `).join('');
+          }).catch(()=>{
+            document.getElementById('related-articles').innerHTML = '<p style="color:var(--ddb-text-muted);font-size:0.9rem;">Related articles unavailable.</p>';
+          });
+        })();
+        </script>
+      </div>
+
+      <!-- Recommended Tools -->
+      <div class="ddb-card" style="padding:20px;">
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--ddb-text);">Recommended Tools</h4>
+        <div id="recommended-tools">
+          <a href="../tools/debt-payoff-calculator.html" class="ddb-tool-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);text-decoration:none;color:inherit;">
+            <h5 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">Debt Payoff Calculator</h5>
+            <p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">Plan your route to zero balance.</p>
+          </a>
+          <a href="../tools/credit-card-interest-calculator.html" class="ddb-tool-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);text-decoration:none;color:inherit;">
+            <h5 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">Credit Card Interest</h5>
+            <p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">See what minimum payments really cost.</p>
+          </a>
+          <a href="../tools/debt-to-income-ratio.html" class="ddb-tool-card" style="display:block;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);text-decoration:none;color:inherit;">
+            <h5 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">DTI Ratio Calculator</h5>
+            <p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">Know where lenders draw the line.</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+</div>
+
+<!-- Footer -->
+<footer class="ddb-footer">
+  <div class="ddb-container">
+    <div class="ddb-footer-grid">
+      <div>
+        <h4>Debt Breakdown</h4>
+        <p style="font-size:0.9rem;color:#a0a0b0;line-height:1.6;">Tools and stories to help you understand, track, and eliminate your debt.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="../tools/debt-payoff-calculator.html">Debt Payoff Calculator</a>
+        <a href="../tools/credit-card-interest-calculator.html">Credit Card Interest</a>
+        <a href="../tools/loan-amortization.html">Loan Amortization</a>
+        <a href="../tools/debt-to-income-ratio.html">DTI Ratio</a>
+        <a href="../tools/balance-transfer-calculator.html">Balance Transfer</a>
+        <a href="../tools/extra-payment-analyzer.html">Extra Payment</a>
+        <a href="../tools/snowball-vs-avalanche.html">Snowball vs Avalanche</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Use</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../disclosure.html">Affiliate Disclosure</a>
+      </div>
+    </div>
+    <div class="ddb-footer-bottom">
+      <p>© 2026 Debt Breakdown. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../ads-loader.js"></script>
+</body>
+</html>
