@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Extra Payment Analyzer | Debt Breakdown</title>
+<meta name="description" content="Compare your current plan vs. extra payments. See time and interest saved.">
+<meta property="og:title" content="Extra Payment Analyzer | Debt Breakdown">
+<meta property="og:description" content="Compare your current plan vs. extra payments. See time and interest saved.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://debtbreakdown.com/tools/extra-payment-analyzer.html">
+<meta property="og:image" content="https://debtbreakdown.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://debtbreakdown.com/tools/extra-payment-analyzer.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://debtbreakdown.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://debtbreakdown.com/tools/index.html"},{"@type":"ListItem","position":3,"name":"Extra Payment Analyzer","item":"https://debtbreakdown.com/tools/extra-payment-analyzer.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Extra Payment Analyzer","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://debtbreakdown.com/tools/extra-payment-analyzer.html"}</script>
+</head>
+<body>
+<nav class="ddb-nav"><div class="ddb-container ddb-nav-inner"><a href="../index.html" class="ddb-logo">Debt<span>Breakdown</span></a><button class="ddb-menu-btn" onclick="document.querySelector('.ddb-nav-links').classList.toggle('ddb-mobile-open')" aria-label="Toggle menu">☰</button><ul class="ddb-nav-links"><li><a href="../index.html">Home</a></li><li><a href="./index.html">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<!-- Tool Top Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+</div>
+
+<div class="ddb-container" style="padding:40px 24px;"><nav class="ddb-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span class="ddb-breadcrumb-sep">/</span><a href="./index.html">Tools</a><span class="ddb-breadcrumb-sep">/</span><span>Extra Payment Analyzer</span></nav></div>
+<div class="ddb-tool-layout">
+  <div class="ddb-tool-panel">
+    <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">Extra Payment Analyzer</h2>
+    <div id="tool-inputs"><div class="ddb-form-group"><label>Current Balance ($)</label><input type="number" id="bal" step="0.01"></div>
+<div class="ddb-form-group"><label>APR (%)</label><input type="number" id="apr" step="0.01"></div>
+<div class="ddb-form-group"><label>Current Monthly Payment ($)</label><input type="number" id="pay" step="0.01"></div>
+<div class="ddb-form-group"><label>Extra Payment ($)</label><input type="number" id="extra" step="10"></div></div>
+    <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+      <button class="ddb-btn ddb-btn-primary" onclick="calculate()">Calculate</button>
+      <button class="ddb-btn ddb-btn-secondary" onclick="resetForm()">Reset</button>
+      <button class="ddb-btn ddb-btn-outline" onclick="window.print()">Export PDF</button>
+    </div>
+    <p style="color:var(--ddb-text-muted);font-size:0.85rem;margin-top:16px;">All data stays in your browser — we never see it.</p>
+  </div>
+  <div>
+    <div class="ddb-chart-container" style="margin-bottom:24px;"><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Results</h3><div id="results-area"></div></div>
+    <div class="ddb-chart-container"><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Visualization</h3><canvas id="chartCanvas" width="500" height="300" style="width:100%;max-height:300px;"></canvas></div>
+  </div>
+</div>
+<div class="ddb-container" style="padding:40px 24px 80px;"><div style="display:grid;grid-template-columns:2fr 1fr;gap:40px;"><!-- Tool Middle Ad --><div class="ddb-container"><div class="ddb-ad-slot" id="tool_middle" data-ad-slot="tool_middle"></div></div>
+<div><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:20px;">Related Articles</h3><div id="related-articles"></div></div><div><h3 style="font-size:1.2rem;font-weight:700;margin-bottom:20px;">Recommended Tools</h3><div id="recommended-tools"></div></div></div></div>
+<!-- Tool Bottom Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+</div>
+
+<footer class="ddb-footer"><div class="ddb-container"><div class="ddb-footer-grid"><div><h4>Debt Breakdown</h4><p style="font-size:0.9rem;color:#a0a0b0;line-height:1.6;">Tools and stories to help you understand, track, and eliminate your debt.</p></div><div><h4>Tools</h4><a href="./debt-payoff-calculator.html">Debt Payoff Calculator</a><a href="./credit-card-interest-calculator.html">Credit Card Interest</a><a href="./loan-amortization.html">Loan Amortization</a><a href="./debt-to-income-ratio.html">DTI Ratio</a><a href="./balance-transfer-calculator.html">Balance Transfer</a><a href="./extra-payment-analyzer.html">Extra Payment</a><a href="./snowball-vs-avalanche.html">Snowball vs Avalanche</a></div><div><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../faq.html">FAQ</a><a href="../blog/index.html">Blog</a></div><div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a><a href="../disclaimer.html">Disclaimer</a><a href="../disclosure.html">Affiliate Disclosure</a></div></div><div class="ddb-footer-bottom"><p>© 2026 Debt Breakdown. All rights reserved.</p></div></div></footer>
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY='ddb_epa';
+function loadData(){const s=localStorage.getItem(STORAGE_KEY);if(s){const d=JSON.parse(s);['bal','apr','pay','extra'].forEach(k=>{const el=document.getElementById(k);if(el)el.value=d[k]||''});}}
+function saveData(){const d={};['bal','apr','pay','extra'].forEach(k=>{const el=document.getElementById(k);if(el)d[k]=el.value});localStorage.setItem(STORAGE_KEY,JSON.stringify(d));}
+function simulate(bal,apr,pay){let b=bal,r=apr/100/12,months=0,totalInt=0,data=[];while(b>0.01&&months<600){months++;let mi=b*r;b+=mi;totalInt+=mi;let p=Math.min(pay,b);b-=p;data.push({month:months,balance:b});}return{months,totalInt,data};}
+function calculate(){const bal=parseFloat(document.getElementById('bal').value)||0;const apr=parseFloat(document.getElementById('apr').value)||0;const pay=parseFloat(document.getElementById('pay').value)||0;const extra=parseFloat(document.getElementById('extra').value)||0;saveData();if(bal<=0||pay<=0){document.getElementById('results-area').innerHTML='<p style="color:var(--ddb-text-muted);">Enter balance and payment.</p>';return;}const base=simulate(bal,apr,pay);const extraSim=simulate(bal,apr,pay+extra);let html=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;"><div class="ddb-card" style="padding:16px;"><h4 style="color:var(--ddb-accent);margin-bottom:8px;">Current Plan</h4><div style="font-size:1.4rem;font-weight:800;">${base.months} mo</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Interest: $${base.totalInt.toFixed(2)}</div></div><div class="ddb-card" style="padding:16px;"><h4 style="color:var(--ddb-primary);margin-bottom:8px;">With Extra $${extra}</h4><div style="font-size:1.4rem;font-weight:800;">${extraSim.months} mo</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Interest: $${extraSim.totalInt.toFixed(2)}</div></div></div>`;html+=`<p style="color:var(--ddb-text-muted);font-size:0.9rem;">Extra $${extra}/month saves $${(base.totalInt-extraSim.totalInt).toFixed(2)} and ${base.months-extraSim.months} months.</p>`;document.getElementById('results-area').innerHTML=html;drawChart(base.data,extraSim.data);}
+function drawChart(a,b){const c=document.getElementById('chartCanvas');const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);const maxM=Math.max(a.length,b.length);const maxB=Math.max(a[0]?.balance||0,b[0]?.balance||0);function draw(data,color){ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();data.forEach((pt,i)=>{let x=40+(i/(maxM-1))*(c.width-60);let y=c.height-30-(pt.balance/maxB)*(c.height-60);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();}draw(a,'#e85d4e');draw(b,'#1a5f4a');ctx.fillStyle='#e85d4e';ctx.fillRect(c.width-140,20,12,12);ctx.fillStyle='#333';ctx.fillText('Current',c.width-120,30);ctx.fillStyle='#1a5f4a';ctx.fillRect(c.width-140,40,12,12);ctx.fillStyle='#333';ctx.fillText('Extra Payment',c.width-120,50);}
+function resetForm(){['bal','apr','pay','extra'].forEach(k=>{const el=document.getElementById(k);if(el)el.value=''});localStorage.removeItem(STORAGE_KEY);document.getElementById('results-area').innerHTML='';document.getElementById('chartCanvas').getContext('2d').clearRect(0,0,500,300);}
+const relatedArticles=[{'url': '../blog/extra-payment-simulator-what-an-extra-50month-does-over-5.html', 'cat': 'Tutorials', 'title': 'Extra Payment Simulator', 'desc': 'What $50 extra does over 5 years.'}, {'url': '../blog/amortization-tables-seeing-where-every-dollar-goes.html', 'cat': 'Concepts', 'title': 'Amortization Tables', 'desc': 'Where every dollar goes.'}, {'url': '../blog/how-to-read-a-loan-amortization-schedule-without-falling.html', 'cat': 'Tutorials', 'title': 'Read Amortization', 'desc': 'Without falling asleep.'}];
+const recTools=[{'url': './loan-amortization.html', 'title': 'Loan Amortization', 'desc': 'Full payment table.'}, {'url': './debt-payoff-calculator.html', 'title': 'Debt Payoff Calculator', 'desc': 'Plan your full payoff.'}, {'url': './credit-card-interest-calculator.html', 'title': 'Credit Card Interest', 'desc': 'True cost of minimums.'}];
+document.getElementById('related-articles').innerHTML=relatedArticles.map(a=>`<a href="${a.url}" class="ddb-article-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><span style="font-size:0.8rem;color:var(--ddb-primary);font-weight:600;">${a.cat}</span><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin:4px 0;">${a.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${a.desc}</p></a>`).join('');
+document.getElementById('recommended-tools').innerHTML=recTools.map(t=>`<a href="${t.url}" class="ddb-tool-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">${t.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${t.desc}</p></a>`).join('');
+loadData();
+</script>
+</body>
+</html>
