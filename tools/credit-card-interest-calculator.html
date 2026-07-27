@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Credit Card Interest Calculator | Debt Breakdown</title>
+<meta name="description" content="See the true cost of minimum payments vs. fixed payments. Total interest, payoff time, and visual breakdown.">
+
+<meta property="og:title" content="Credit Card Interest Calculator | Debt Breakdown">
+<meta property="og:description" content="See the true cost of minimum payments vs. fixed payments. Total interest, payoff time, and visual breakdown.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://debtbreakdown.com/tools/credit-card-interest-calculator.html">
+<meta property="og:image" content="https://debtbreakdown.com/images/og-default.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Credit Card Interest Calculator | Debt Breakdown">
+<meta name="twitter:description" content="See the true cost of minimum payments vs. fixed payments. Total interest, payoff time, and visual breakdown.">
+<meta name="twitter:image" content="https://debtbreakdown.com/images/og-default.jpg">
+
+<link rel="canonical" href="https://debtbreakdown.com/tools/credit-card-interest-calculator.html">
+<link rel="stylesheet" href="../style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://debtbreakdown.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://debtbreakdown.com/tools/index.html"},
+    {"@type": "ListItem", "position": 3, "name": "Credit Card Interest Calculator", "item": "https://debtbreakdown.com/tools/credit-card-interest-calculator.html"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Credit Card Interest Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "description": "See the true cost of minimum payments vs. fixed payments. Total interest, payoff time, and visual breakdown.",
+  "url": "https://debtbreakdown.com/tools/credit-card-interest-calculator.html"
+}
+</script>
+</head>
+<body>
+
+<nav class="ddb-nav">
+  <div class="ddb-container ddb-nav-inner">
+    <a href="../index.html" class="ddb-logo">Debt<span>Breakdown</span></a>
+    <button class="ddb-menu-btn" onclick="document.querySelector('.ddb-nav-links').classList.toggle('ddb-mobile-open')" aria-label="Toggle menu">☰</button>
+    <ul class="ddb-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Tool Top Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+</div>
+
+<div class="ddb-container" style="padding: 40px 24px;">
+  <nav class="ddb-breadcrumb" aria-label="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="ddb-breadcrumb-sep">/</span>
+    <a href="./index.html">Tools</a>
+    <span class="ddb-breadcrumb-sep">/</span>
+    <span>Credit Card Interest Calculator</span>
+  </nav>
+</div>
+
+<div class="ddb-tool-layout">
+  <!-- Left: Input Panel -->
+  <div class="ddb-tool-panel">
+    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Credit Card Interest Calculator</h2>
+    <div id="tool-inputs">
+      
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap;">
+      <button class="ddb-btn ddb-btn-primary" onclick="calculate()">Calculate</button>
+      <button class="ddb-btn ddb-btn-secondary" onclick="resetForm()">Reset</button>
+      <button class="ddb-btn ddb-btn-outline" onclick="exportResults()">Export PDF</button>
+    </div>
+    <p style="color: var(--ddb-text-muted); font-size: 0.85rem; margin-top: 16px;">All data stays in your browser — we never see it.</p>
+  </div>
+
+  <!-- Right: Results + Chart -->
+  <div>
+    <div class="ddb-chart-container" style="margin-bottom: 24px;">
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 16px;">Results</h3>
+      <div id="results-area"></div>
+    </div>
+    <div class="ddb-chart-container">
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 16px;">Visualization</h3>
+      <canvas id="chartCanvas" width="500" height="300" style="width: 100%; max-height: 300px;"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<!-- Tool Middle Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_middle" data-ad-slot="tool_middle"></div>
+</div>
+<!-- Related Articles + Tools -->
+<div class="ddb-container" style="padding: 40px 24px 80px;">
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+    <div>
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 20px;">Related Articles</h3>
+      <div id="related-articles"></div>
+    </div>
+    <div>
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 20px;">Recommended Tools</h3>
+      <div id="recommended-tools"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Tool Bottom Ad -->
+<div class="ddb-container">
+  <div class="ddb-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+</div>
+
+<footer class="ddb-footer">
+  <div class="ddb-container">
+    <div class="ddb-footer-grid">
+      <div>
+        <h4>Debt Breakdown</h4>
+        <p style="font-size:0.9rem;color:#a0a0b0;line-height:1.6;">Tools and stories to help you understand, track, and eliminate your debt.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="./debt-payoff-calculator.html">Debt Payoff Calculator</a>
+        <a href="./credit-card-interest-calculator.html">Credit Card Interest</a>
+        <a href="./loan-amortization.html">Loan Amortization</a>
+        <a href="./debt-to-income-ratio.html">DTI Ratio</a>
+        <a href="./balance-transfer-calculator.html">Balance Transfer</a>
+        <a href="./extra-payment-analyzer.html">Extra Payment</a>
+        <a href="./snowball-vs-avalanche.html">Snowball vs Avalanche</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Use</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../disclosure.html">Affiliate Disclosure</a>
+      </div>
+    </div>
+    <div class="ddb-footer-bottom">
+      <p>© 2026 Debt Breakdown. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+
+const STORAGE_KEY = 'ddb_cc_interest';
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const d = JSON.parse(saved);
+    document.getElementById('balance').value = d.balance || '';
+    document.getElementById('apr').value = d.apr || '';
+    document.getElementById('minPay').value = d.minPay || '';
+    document.getElementById('fixedPay').value = d.fixedPay || '';
+  }
+}
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    balance: document.getElementById('balance').value,
+    apr: document.getElementById('apr').value,
+    minPay: document.getElementById('minPay').value,
+    fixedPay: document.getElementById('fixedPay').value
+  }));
+}
+
+function calculate() {
+  const balance = parseFloat(document.getElementById('balance').value) || 0;
+  const apr = parseFloat(document.getElementById('apr').value) || 0;
+  const minPay = parseFloat(document.getElementById('minPay').value) || 0;
+  const fixedPay = parseFloat(document.getElementById('fixedPay').value) || 0;
+  saveData();
+
+  if (balance <= 0 || apr <= 0) {
+    document.getElementById('results-area').innerHTML = '<p style="color:var(--ddb-text-muted);">Enter balance and APR.</p>';
+    return;
+  }
+
+  function simulate(payment) {
+    let bal = balance, totalInt = 0, months = 0;
+    let schedule = [];
+    while (bal > 0.01 && months < 600) {
+      months++;
+      let mi = bal * (apr / 100 / 12);
+      bal += mi;
+      totalInt += mi;
+      let pay = Math.min(payment, bal);
+      bal -= pay;
+      schedule.push({month: months, balance: bal, interest: totalInt});
+    }
+    return {months, totalInt, schedule};
+  }
+
+  const minSim = simulate(minPay);
+  const fixedSim = fixedPay > 0 ? simulate(fixedPay) : null;
+
+  let html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">';
+  html += `<div class="ddb-card" style="padding:16px;"><h4 style="color:var(--ddb-accent);margin-bottom:8px;">Minimum Payment</h4><div style="font-size:1.5rem;font-weight:800;">${minSim.months} mo</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Interest: $${minSim.totalInt.toFixed(2)}</div></div>`;
+  if (fixedSim) {
+    html += `<div class="ddb-card" style="padding:16px;"><h4 style="color:var(--ddb-primary);margin-bottom:8px;">Fixed $${fixedPay}</h4><div style="font-size:1.5rem;font-weight:800;">${fixedSim.months} mo</div><div style="font-size:0.85rem;color:var(--ddb-text-muted);">Interest: $${fixedSim.totalInt.toFixed(2)}</div></div>`;
+  }
+  html += '</div>';
+  if (fixedSim) {
+    html += `<p style="color:var(--ddb-text-muted);font-size:0.9rem;">Paying $${fixedPay} saves $${(minSim.totalInt - fixedSim.totalInt).toFixed(2)} and ${minSim.months - fixedSim.months} months.</p>`;
+  }
+  document.getElementById('results-area').innerHTML = html;
+
+  drawChart(minSim.schedule, fixedSim ? fixedSim.schedule : []);
+}
+
+function drawChart(minData, fixedData) {
+  const canvas = document.getElementById('chartCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const maxM = Math.max(minData.length, fixedData.length);
+  if (maxM === 0) return;
+  const maxB = minData[0]?.balance || 0;
+
+  function draw(data, color) {
+    ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.beginPath();
+    data.forEach((pt, i) => {
+      let x = 40 + (i / (maxM - 1)) * (canvas.width - 60);
+      let y = canvas.height - 30 - (pt.balance / maxB) * (canvas.height - 60);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+  }
+  draw(minData, '#e85d4e');
+  if (fixedData.length) draw(fixedData, '#1a5f4a');
+
+  ctx.fillStyle = '#e85d4e'; ctx.fillRect(canvas.width - 140, 20, 12, 12);
+  ctx.fillStyle = '#333'; ctx.fillText('Minimum', canvas.width - 120, 30);
+  if (fixedData.length) {
+    ctx.fillStyle = '#1a5f4a'; ctx.fillRect(canvas.width - 140, 40, 12, 12);
+    ctx.fillStyle = '#333'; ctx.fillText('Fixed Payment', canvas.width - 120, 50);
+  }
+}
+
+function resetForm() {
+  ['balance','apr','minPay','fixedPay'].forEach(id => document.getElementById(id).value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results-area').innerHTML = '';
+  document.getElementById('chartCanvas').getContext('2d').clearRect(0,0,500,300);
+}
+function exportResults() { window.print(); }
+
+// Inputs
+const inputsHtml = `
+  <div class="ddb-form-group"><label>Current Balance ($)</label><input type="number" id="balance" step="0.01"></div>
+  <div class="ddb-form-group"><label>APR (%)</label><input type="number" id="apr" step="0.01"></div>
+  <div class="ddb-form-group"><label>Minimum Payment ($)</label><input type="number" id="minPay" step="0.01"></div>
+  <div class="ddb-form-group"><label>Fixed Payment to Compare ($)</label><input type="number" id="fixedPay" step="0.01"></div>
+`;
+document.getElementById('tool-inputs').innerHTML = inputsHtml;
+
+const relatedArticles = [
+  {url: '../blog/the-minimum-payment-trap-a-real-story.html', cat: 'Stories', title: 'The Minimum Payment Trap', desc: 'Marcus paid $300 a month for three years. His balance barely moved.'},
+  {url: '../blog/how-compound-interest-becomes-a-debt-killer-when-youre-not.html', cat: 'Concepts', title: 'Compound Interest as Debt Killer', desc: 'Why minimum payments keep you in debt forever.'},
+  {url: '../blog/how-to-negotiate-a-lower-apr-with-your-credit-card-company.html', cat: 'Tutorials', title: 'Negotiate a Lower APR', desc: 'The exact script to cut your rate in 12 minutes.'}
+];
+const recTools = [
+  {url: './debt-payoff-calculator.html', title: 'Debt Payoff Calculator', desc: 'Plan your full payoff strategy.'},
+  {url: './extra-payment-analyzer.html', title: 'Extra Payment Analyzer', desc: 'See impact of extra payments.'},
+  {url: './balance-transfer-calculator.html', title: 'Balance Transfer', desc: 'Is a 0% transfer worth the fee?'}
+];
+document.getElementById('related-articles').innerHTML = relatedArticles.map(a => `<a href="${a.url}" class="ddb-article-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><span style="font-size:0.8rem;color:var(--ddb-primary);font-weight:600;">${a.cat}</span><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin:4px 0;">${a.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${a.desc}</p></a>`).join('');
+document.getElementById('recommended-tools').innerHTML = recTools.map(t => `<a href="${t.url}" class="ddb-tool-card" style="display:block;margin-bottom:16px;padding:16px;background:var(--ddb-border-light);border-radius:var(--ddb-radius-sm);"><h4 style="font-size:0.95rem;font-weight:700;color:var(--ddb-text);margin-bottom:4px;">${t.title}</h4><p style="font-size:0.85rem;color:var(--ddb-text-muted);margin:0;">${t.desc}</p></a>`).join('');
+
+loadData();
+
+</script>
+</body>
+</html>
